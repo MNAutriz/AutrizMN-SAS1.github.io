@@ -1,0 +1,604 @@
+
+/* Autriz, Mark Neil G. CMSC 100 - UV2L */
+/* This is the attached CSS file to style, layout and design the website */
+
+
+/* Apply basic styles to reset default margin, padding, and font-family */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Banner Styling */
+#banner{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), #0766AD),url(Images/Cover\ Photo.jpg);
+    height: 95vh; /* Set banner height to fill the viewport height */
+    background-size: cover; /* Ensure background image covers the entire section */
+    background-position: center; /* Center the background image */
+    margin: 0; /* Add padding to the left and right */
+}
+
+
+/* Logo Styling */
+.logo {
+    width: 50%; /* Set logo width */
+    display: block;  /* Make the logo a block element so that it will follow the layout of the navigation bar and fit - in*/
+}
+
+.bannerText{
+    text-align: center;
+    color: #fff;
+    padding-top: 220px;
+}   
+
+/* We utilize the font-family that we have imported for a more creative perspective */
+.bannerText h1{
+    font-size: 100px;
+    font-family: 'Kaushan Script', cursive;
+}
+
+/* Format the text in the banners to be italic */
+.bannerText p{
+    font-size: 20px;
+    font-style: italic;
+}
+
+/* Determine the margin that the button has */
+.bannerButton {
+    margin: 5px auto 5px;
+}
+
+/* Banner Button Styling */
+.bannerButton a{
+    color: #fff;
+    text-decoration: none;
+    display:inline-block;
+    margin: 40px 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: white;
+    position:relative; /* Establish positioning context for pseudo-element */
+    z-index: 1; /* Ensure buttons appear above pseudo-element */
+    transition: color 0.5s; 
+}
+
+.bannerButton a span{
+    width:5%; /* Set width of pseudo-element */
+    height: 100%; /* Set height of pseudo-element */
+    position:absolute; /* Position pseudo-element absolutely relative to its parent */
+    top:0; /* Align pseudo-element with the top edge of its parent */
+    left:0; /* Align pseudo-element with the left edge of its parent */
+    background-color: transparent;  /* Set background color of pseudo-element */
+    z-index: -1; /* Place pseudo-element behind its parent */
+    transition: width 0.5s; /* Add transition effect for width change */
+}
+
+.bannerButton a:hover span{
+    width: 100%; /* Expand pseudo-element width on hover */
+    background-color: #fff; /* Change background color on hover */
+}
+
+.bannerButton a:hover {
+    color: #0bb0d1; /* Change text color on hover */
+}
+
+.container {
+    position: relative;
+}
+
+
+/* Side Navigation Styling */
+#sideNavigation {
+    position: fixed; /* Fix the side navigation bar position */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #0766AD; 
+    text-align: center; 
+    z-index: 1000; /* Ensure navigation appears above other content */
+}
+
+#sideNavigation nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center align items */
+    align-items: center;
+}
+
+/* Styling for navigation list items */
+#sideNavigation nav ul li {
+    margin-right: 20px; /* Add margin between navigation items */
+}
+
+/* Styling for the last navigation list item */
+#sideNavigation nav ul li:last-child {
+    margin-right: 0; /* Remove margin for the last navigation item */
+}
+
+/* Styling for navigation links */
+#sideNavigation nav ul li a {
+    display: block; /* Make navigation links block-level elements */
+    color: #fff;
+    text-decoration: none; /* Remove default underline decoration */    
+    transition: all 0.3s ease; /* Add transition effect for smoother hover */
+}
+
+#sideNavigation nav ul li a:hover {
+    background-color: #0056b3; /* Darker shade of blue whenever it is hovered */
+}
+
+.logo {
+    width: 100px; /* Set logo width for a clearer approach */
+    vertical-align: middle; /* Align the logo vertically */
+    margin-right: 10px; /* Add margin to separate logo from other links */
+}
+
+
+
+
+/* This primarily revolves in the styling and designing of the header fonts and style per section */
+.titleText {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+/* Styling for paragraphs within title text */
+.titleText p {
+    margin: auto;
+    font-size: 20px;
+    color: #0bb0d1;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;  /* Set stacking order */
+    display: inline-block; /* Make paragraph an inline block */
+}
+
+/* Styling for pseudo-element after paragraph */
+.titleText p::after {
+    content: '';
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#0bb0d1, #fff); /* Apply gradient background */
+    position: absolute; /* Position pseudo-element absolutely */
+    top: -20px; /* Position pseudo-element above paragraph */
+    left: 0; /* Position pseudo-element at the left */
+    transform: rotate(10deg);  /* Rotate pseudo-element to form the leaf-life structure */
+    border-top-left-radius: 35px; 
+    border-bottom-right-radius: 35px;
+    z-index: -1;/* Set stacking order behind paragraph */
+}
+
+/* Styling for heading within title text */
+.titleText h1 {
+    font-size: 50px;
+}
+
+/* Styling the previous projects that I have created */
+#service{
+    width: 100%;
+    padding: 70px 0;
+    background-color: white;
+}
+
+.descriptionService{
+    font-size: 18px;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.serviceBox {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items horizontally */
+}
+
+.singleService {
+    flex: 1 1 calc(20% - 20px); /* Each service takes 25% width with some gap */
+    position: relative;
+    border-left: 20px solid #fff; /* Add border to the left */
+    border-right: 20px solid #fff; /* Add border to the right */
+}
+
+.singleService img{
+    width: 100%;
+    border-radius: 7px;
+    height: 100%;
+}
+
+.overlay{
+    height:100%;
+    width: 100%;
+    position:absolute;
+    top: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    background: linear-gradient(rgba(0,0,0,0.5), #0014f0);
+    opacity: 0;
+    transition: 1s;
+}
+
+.singleService:hover .overlay{
+    opacity: 1;
+}
+
+.serviceDescription{
+    width: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    opacity:0;
+    transform: translateX(-50%);
+    transition: 1s;
+    color: white;
+}
+
+hr{
+    background: white;
+    margin: 15px auto;
+    height: 2px;
+    border: 0;
+    width: 90%;
+}
+
+.serviceDescription p{
+    font-size: 14px;
+    text-align: center;
+}
+
+.serviceDescription h3{
+    font-size: 20px;
+    text-align: center;
+}
+
+.singleService:hover .serviceDescription{
+    bottom: 25%;
+    opacity: 1;
+}
+
+
+/* This section named testimonial primarily revolves around the skills and autobiography section */
+#testimonial {
+    width: 100%;
+    padding: 70px 0; /* Padding for top and bottom */
+    background-color: #efefef;
+}
+
+/* Styles for the title text */
+.titleText {
+    text-align: center;
+    padding-bottom: 50px; /* Padding for bottom */
+}
+
+/* Styling for the paragraph in titleText */
+.titleText p {
+    margin: auto;
+    font-size: 20px;
+    color: #0bb0d1; /* Text color */
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+}
+
+/* Styling for the pseudo-element after the paragraph */
+.titleText p::after {
+    content: '';
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(#0bb0d1, #fff); /* Background gradient */
+    position: absolute;
+    top: -20px; 
+    left: 0;
+    transform: rotate(10deg); 
+    border-top-left-radius: 35px; 
+    border-bottom-right-radius: 35px; 
+    z-index: -1; /* Behind the paragraph */
+}
+
+/* Styling for the main heading */
+.titleText h1 {
+    font-size: 50px;
+}
+
+/* Styling for the row containing testimonials */
+.testimonialRow {
+    width: 80%;
+    margin: auto; /* Centering */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Styling for each testimonial column */
+.testimonialColumn {
+    flex-basis: 45%; /* Adjust width */
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 10px 20px 3px #0766AD; /* Box shadow */
+    cursor: pointer;
+    transform: transform 1s;
+}
+
+/* Additional styling for testimonial information */
+.additionalInfo {
+    padding: 20px;
+}
+
+/* Styling for headings in skills and autobiography sections */
+.skills h3,
+.autobiography h3 {
+    font-size: 20px;
+    text-align: center; 
+}
+
+/* Styling for the skills list */
+.skills ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+/* Styling for each skill in the list */
+.skills ul li {
+    margin-bottom: 10px; /* Spacing between skills */
+}
+
+/* Styling for the autobiography paragraph */
+.autobiography p {
+    font-size: 15px; /* Font size */
+    text-align: justify; /* Justified alignment */
+}
+
+/* Add margin-right to the first section and margin-left to the second section */
+.testimonialRow .testimonialColumn:first-child {
+    margin-right: 20px; 
+}
+
+.testimonialRow .testimonialColumn:last-child {
+    margin-left: 20px; 
+}
+
+
+/* Footer styling */
+#footer {
+    padding: 100px 0 20px; /* Padding for top, bottom, and reset bottom padding */
+    background-color: #efefef; 
+    position: relative;
+}
+
+/* Styling for the row containing footer content */
+.footerRow {
+    width: 80%; /* Width of the content */
+    margin: 0 auto; 
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Spacing between elements */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Styling for the left side of the footer */
+.footerLeft {
+    flex-basis: 30%; /* Width of the left side */
+    padding: 10px; /* Padding */
+    margin-bottom: 20px; 
+    text-align: left; /* Text alignment */
+}
+
+/* Styling for the right side of the footer */
+.footerRight {
+    flex-basis: 65%; /* Width of the right side */
+    padding: 10px; 
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Styling for headings within the footer */
+.footerRow h1 {
+    margin: 10px 0; 
+}
+
+/* Styling for paragraphs within the footer */
+.footerRow p {
+    line-height: 30px; /* Line height */
+}
+
+/* Styling for font-awesome icons */
+.footerLeft .fa,
+.footerRight .fa {
+    color: #0bb0d1; /* Icon color */
+    font-size: 20px; /* Icon size */
+    margin: 10px; /* Spacing */
+}
+
+/* Styling for the globe icon */
+.fa-globe{
+    color: #0bb0d1; /* Icon color */
+    font-size: 20px; /* Icon size */
+    margin: 10px; /* Spacing */
+}
+
+/* Styling for the back to top button */
+.backToTop {
+    bottom: 20px; 
+    margin-left: 150px; 
+    background-color: #0bb0d1; /* Background color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Padding */
+    border-radius: 5px; /* Border radius */
+    text-decoration: none; /* Remove underline */
+    transition: opacity 0.3s ease; /* Transition effect */
+    z-index: 999; /* Z-index to bring it above other elements */
+}
+
+/* Hover effect for back to top button */
+.backToTop:hover {
+    opacity: 0.8; /* Change opacity on hover */
+}
+
+/* Styling for the footer logo */
+.footerLogo{
+    width: 70%; /* Set width */
+}
+/* General Styling for Manifesto Sections */
+.manifestoSection {
+    background: linear-gradient(to bottom right, #e6f7ff, #ccf5ff);
+    margin: 30px auto;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Headings Styling */
+.manifestoSection h2 {
+    font-size: 1.8rem;
+    color: #0077b6;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #0077b6;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Paragraph Text Styling */
+.manifestoSection p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin: 10px 0;
+    text-align: justify;
+}
+
+/* Unordered List Styling */
+.manifestoSection ul {
+    margin: 20px 0;
+    padding: 0 20px;
+    list-style: none;
+}
+
+.manifestoSection ul li {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 30px;
+    line-height: 1.8;
+}
+
+/* Decorative Icon for List Items */
+.manifestoSection ul li::before {
+    content: "✔";
+    color: #0077b6;
+    font-size: 1.3rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .manifestoSection {
+        padding: 15px 20px;
+    }
+
+    .manifestoSection h2 {
+        font-size: 1.5rem;
+    }
+
+    .manifestoSection p, .manifestoSection ul li {
+        font-size: 1rem;
+    }
+}
+
+/* General Styling for Manifesto Sections */
+.manifestoSection {
+    background: linear-gradient(to bottom right, #e6f7ff, #ccf5ff);
+    margin: 30px auto;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Styling for Images in Manifesto Sections */
+.manifestoImage {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Headings Styling */
+.manifestoSection h2 {
+    font-size: 1.8rem;
+    color: #0077b6;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 3px solid #0077b6;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Paragraph Text Styling */
+.manifestoSection p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin: 10px 0;
+    text-align: justify;
+}
+
+/* Unordered List Styling */
+.manifestoSection ul {
+    margin: 20px 0;
+    padding: 0 20px;
+    list-style: none;
+}
+
+.manifestoSection ul li {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 30px;
+    line-height: 1.8;
+}
+
+/* Decorative Icon for List Items */
+.manifestoSection ul li::before {
+    content: "✔";
+    color: #0077b6;
+    font-size: 1.3rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .manifestoSection {
+        padding: 15px 20px;
+    }
+
+    .manifestoSection h2 {
+        font-size: 1.5rem;
+    }
+
+    .manifestoSection p, .manifestoSection ul li {
+        font-size: 1rem;
+    }
+}
